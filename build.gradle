@@ -5,7 +5,11 @@ repositories {
     mavenCentral ()
 }
 dependencies {
-    testImplemenentation (
-            "com.codeborne:selenide: 7.9.3"
+    testImplementation (
+            "org.junit.jupiter:junit-jupiter:5.10.0",
+            "com.codeborne:selenide:7.10.1"
     )
+    test {
+        useJUnitPlatform()
+    }
 }
