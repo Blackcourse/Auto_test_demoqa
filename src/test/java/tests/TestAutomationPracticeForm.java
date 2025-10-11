@@ -23,7 +23,7 @@ public class TestAutomationPracticeForm {
         $("#firstName").setValue("Alex");
         $("#lastName").setValue("Bolduin");
         $("#userEmail").setValue("abld@nail.ru");
-        $x("//label[@for='gender-radio-1']").click();
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("8999562458");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").click();
@@ -32,7 +32,7 @@ public class TestAutomationPracticeForm {
         $(".react-datepicker__month-select").selectOption("June");
         $(".react-datepicker__day.react-datepicker__day--010").click();
         $("#subjectsInput").setValue("English").pressEnter();
-        $x("//label[@for='hobbies-checkbox-2']").click();
+        $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("img.png");
         $("#currentAddress").setValue("Another street 1");
         $("#react-select-3-input").setValue("NCR").pressEnter();
