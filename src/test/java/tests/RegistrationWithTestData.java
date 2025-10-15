@@ -29,9 +29,9 @@ public class RegistrationWithTestData {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
-        $("#firstName").setValue(firstName);
-        $("#lastName").setValue(lastName);
-        $("#userEmail").setValue(userMail);
+        $("#firstName").setValue("Gella");
+        $("#lastName").setValue("Kurbob");
+        $("#userEmail").setValue("kurbob@asd.ru");
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("9991112233");
         $("#dateOfBirthInput").click();
@@ -51,9 +51,9 @@ public class RegistrationWithTestData {
         $("#submit").click();
 
 
-        $(".modal-body").shouldHave(text(firstName));
-        $(".modal-body").shouldHave(text(lastName));
-        $(".modal-body").shouldHave(text(userMail));
+        $(".modal-body").shouldHave(text("Gella"));
+        $(".modal-body").shouldHave(text("Kurbob"));
+        $(".modal-body").shouldHave(text("kurbob@asd.ru"));
         $(".modal-body").shouldHave(text("Male"));
         $(".modal-body").shouldHave(text("9991112233"));
         $(".modal-body").shouldHave(text("29 April,1999"));
