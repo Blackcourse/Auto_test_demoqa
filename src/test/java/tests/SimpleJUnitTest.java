@@ -7,9 +7,9 @@ public class SimpleJUnitTest {
 
 
     int result;
+
     @BeforeAll
-    static void  beforeAll ()
-    {
+    static void beforeAll() {
         System.out.println("### beforeAll () \n");
     }
     @BeforeEach

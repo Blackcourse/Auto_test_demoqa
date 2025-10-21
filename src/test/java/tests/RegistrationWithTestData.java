@@ -1,5 +1,7 @@
 package tests;
+
 import org.junit.jupiter.api.Test;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -62,15 +64,6 @@ public class RegistrationWithTestData {
         $(".modal-body").shouldHave(text("image_1.jpg"));
         $(".modal-body").shouldHave(text("Moscow"));
         $(".modal-body").shouldHave(text("NCR Delhi"));
-
-
-
-
-
-
-
-
-
 
 
     }

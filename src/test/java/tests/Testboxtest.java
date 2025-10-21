@@ -11,15 +11,16 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class Testboxtest {
     @BeforeAll
-    static void  beforeAll ()
-    {Configuration.browserSize = "1920x1080";
-        Configuration.pageLoadStrategy ="eager";
+    static void beforeAll() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.holdBrowserOpen =true;
+        Configuration.holdBrowserOpen = true;
     }
+
     @Test
     void fillFormTest() {
-        open("/text-box");
+        open("/automation-practice-form");
         $("#userName").setValue("Alex");
         $("#userEmail").setValue("asd@nail.ru");
         $("#currentAddress").setValue("Strange street 2");

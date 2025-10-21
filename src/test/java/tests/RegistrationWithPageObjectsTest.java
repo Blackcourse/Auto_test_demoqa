@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-class RegistrationWithPageObjectsTests extends TestBase {
+class RegistrationWithPageObjectsTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
@@ -17,7 +17,7 @@ class RegistrationWithPageObjectsTests extends TestBase {
                 .setLastName("Kurbobovna")
                 .setEmail("gell@kur.com")
                 .setGender("Female")
-                .setUserNumber("89521457896")
+                .setUserNumber("8952145789")
                 .setDateOfBirth( "28", "July", "2023")
                 .setSubjects("Math")
                 .setHobbiesWrapper("Sports")
@@ -30,8 +30,8 @@ class RegistrationWithPageObjectsTests extends TestBase {
                 .checkKeyValue("Student Name", "Gella Kurbobovna")
                 .checkKeyValue("Student Email", "gell@kur.com")
                 .checkKeyValue("Gender", "Female")
-                .checkKeyValue("Mobile", "1234234")
-                .checkKeyValue("Date of Birth", "28 July,2003")
+                .checkKeyValue("Mobile", "8952145789")
+                .checkKeyValue("Date of Birth", "28 July,2023")
                 .checkKeyValue("Subjects", "Math")
                 .checkKeyValue("Hobbies", "Sports")
                 .checkKeyValue("Picture", "img.png")
