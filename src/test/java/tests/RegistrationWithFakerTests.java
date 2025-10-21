@@ -15,7 +15,14 @@ public class RegistrationWithFakerTests extends TestBase {
         String userEmail = TestData.getUserEmailFaker();
         String userGender = TestData.getUserGenderFaker();
         String userNumber = TestData.getUserPhoneNumbFaker();
+        String day = TestData.getDay();
+        String month = TestData.getMonth();
+        String year = TestData.getYear();
         String userAddress = TestData.getUserAddressFaker();
+        String userSubjects = TestData.getUserSubjects();
+        String userHobbies = TestData.getUserHobbies();
+        String userState = TestData.getUserState();
+        String userCity = TestData.getUserCity(userState);
 
         registrationPage.openPage()
                 .checkTitle()
@@ -25,26 +32,28 @@ public class RegistrationWithFakerTests extends TestBase {
                 .setEmail(userEmail)
                 .setGender(userGender)
                 .setUserNumber(userNumber)
-                .setDateOfBirth("05", "May", "2000")
-                .setSubjects("Math")
-                .setHobbiesWrapper("Sports")
+                .setDateOfBirth(day, month, year)
+                .setSubjects(userSubjects)
+                .setHobbiesWrapper(userHobbies)
                 .setUploadPicture("img.png")
                 .setCurrentAddress(userAddress)
-                .setState("NCR")
-                .setCity("Delhi")
+                .setState(userState)
+                .setCity(userCity)
                 .clickButtonSubmit()
                 .checkModalDialog("Thanks for submitting the form")
                 .checkKeyValue("Student Name", firstName + " " + lastName)
                 .checkKeyValue("Student Email", userEmail)
                 .checkKeyValue("Gender", userGender)
                 .checkKeyValue("Mobile", userNumber)
-                .checkKeyValue("Date of Birth", "05 May,2000")
-                .checkKeyValue("Subjects", "Math")
-                .checkKeyValue("Hobbies", "Sports")
+                .checkKeyValue("Date of Birth", day + " " + month +  "," + year)
+                .checkKeyValue("Subjects", userSubjects)
+                .checkKeyValue("Hobbies", userHobbies)
                 .checkKeyValue("Picture", "img.png")
                 .checkKeyValue("Address", userAddress)
-                .checkKeyValue("State and City", "NCR Delhi")
-        ;
+                .checkKeyValue("State and City", userState + " " + userCity);
+
+
+
 
     }
 }

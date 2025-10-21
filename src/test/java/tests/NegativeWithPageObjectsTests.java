@@ -20,7 +20,7 @@ public class NegativeWithPageObjectsTests extends TestBase {
                 .setLastName("Bolduin")
                 .setGender("Male")
                 .setUserNumber("dsafjafd;oikldfj")
-                .setDateOfBirth( "05", "July", "2000")
+                .setDateOfBirth("05", "July", "2000")
                 .clickButtonSubmit()
         ;
 
