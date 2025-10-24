@@ -53,8 +53,6 @@ public class RegistrationWithFakerTests extends TestBase {
                 .checkKeyValue("State and City", userState + " " + userCity);
 
 
-
-
     }
 }
 

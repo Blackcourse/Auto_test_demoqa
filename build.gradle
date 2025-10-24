@@ -1,17 +1,29 @@
 plugins {
     id 'java-library'
 }
+
 repositories {
-    mavenCentral ()
+    mavenCentral()
 }
+
 dependencies {
-    testImplementation (
-            "org.junit.jupiter:junit-jupiter:5.10.0",
+    testImplementation(
             "com.codeborne:selenide:7.10.1",
-            "org.slf4j:slf4j-simple:2.0.7",
-            'com.github.javafaker:javafaker:1.0.2'
+            "com.github.javafaker:javafaker:1.0.2",
+            "org.junit.jupiter:junit-jupiter:5.10.0",
+            'org.slf4j:slf4j-simple:2.0.7'
     )
-    test {
-        useJUnitPlatform()
+}
+
+test {
+    useJUnitPlatform()
+}
+tasks.register('SMOKE', Test) {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+    useJUnitPlatform {
+        includeTags("SMOKE")
     }
 }

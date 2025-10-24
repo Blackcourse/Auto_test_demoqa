@@ -1,15 +1,17 @@
 package pages.components;
 
-import static com.codeborne.selenide.Condition.appear;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
+
 
 public class ModalDialogComponent {
-    public void modalDialog(String value){
+    private String modalDialog;
+    private String modalDialogSize;
 
-        $(".modal-dialog").should(appear);
-        $("#example-modal-sizes-title-lg").shouldHave(text(value));
+    public void modalDialog(String value) {
+        modalDialog = String.valueOf(Selenide.$(".modal-dialog").should(Condition.appear));
+        modalDialogSize = String.valueOf(Selenide.$("#example-modal-sizes-title-lg").shouldHave(Condition.text(value)));
+
 
     }
-
 }
