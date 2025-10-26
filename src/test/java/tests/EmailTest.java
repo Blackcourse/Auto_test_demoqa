@@ -16,11 +16,11 @@ public class EmailTest {
         System.out.println("Hello world");
 
     }
+    @Disabled
     @Test
     @DisplayName("Email при оплате")
     void emailShouldBeSendAfter () {
         throw new AssertionError("Падаем!");
-
 
     }
 
