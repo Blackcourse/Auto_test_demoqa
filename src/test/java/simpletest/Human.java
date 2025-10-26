@@ -1,4 +1,4 @@
-package SimpleTest;
+package simpletest;
 
 public class Human {
     public String setName;
