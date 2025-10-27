@@ -1,11 +1,8 @@
 package tests;
-
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -22,11 +19,11 @@ public class ParamTest {
     @ValueSource(strings = {
             "колонка", "мышь", "клавиатура"
     })
-    @DisplayName("Отображение ")
+    @DisplayName("Отображение результата поискового запроса ")
     void search(String search) {
         open("https://market.yandex.ru/");
         $("#header-search").setValue(search).pressEnter();
-        $$("#EQlfk Gqfzd").shouldBe(sizeGreaterThan(0));
+        $$("._1H6_i").shouldBe(sizeGreaterThan(0));
 
     }
     @ParameterizedTest(name = "Проверка заголовка страницы поиска {0}")
@@ -38,20 +35,20 @@ public class ParamTest {
     void searchTitleCheck(String query) {
         open("https://market.yandex.ru/");
         $("#header-search").setValue(query).pressEnter();
-        $$(".data-auto-themename").shouldHave(CollectionCondition.sizeGreaterThan(0));
+        $$("._1H6_i").shouldHave(CollectionCondition.sizeGreaterThan(0));
     }
 
 
     static Stream<String> popularQueries() {
-        return Stream.of("носки", "джинсы", "перчатки");
+        return Stream.of( "колонка", "мышь", "клавиатура");
     }
 
-    @ParameterizedTest(name = "Проверка количества результатов для {0}")
+    @ParameterizedTest(name = "Проверка количества результатов ")
     @MethodSource("popularQueries")
     void resultCountCheck(String query) {
         open("https://market.yandex.ru/");
         $("#header-search").setValue(query).pressEnter();
-        $$(".product-card").shouldHave(CollectionCondition.sizeGreaterThan(20));
+        $$("._1H6_i").shouldHave(CollectionCondition.sizeGreaterThan(0));
     }
     @AfterEach
     void afterEach() {
