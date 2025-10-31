@@ -1,0 +1,12 @@
+{
+  "type": "cats",
+  "name of owner": "Kirill",
+  "quantity of cats ": 2,
+  "cats": [ {"name":"Gella", "color": "black"},
+    {"name":"Uma", "color": "white"}
+  ]
+
+
+
+
+}
