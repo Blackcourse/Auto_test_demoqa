@@ -11,7 +11,18 @@ dependencies {
             "com.codeborne:selenide:7.10.1",
             "com.github.javafaker:javafaker:1.0.2",
             "org.junit.jupiter:junit-jupiter:5.10.0",
-            'org.slf4j:slf4j-simple:2.0.7'
+            'org.slf4j:slf4j-simple:2.0.7',
+            "com.codeborne:pdf-test:1.8.1",
+            "com.codeborne:pdf-test:2.1.0",
+            "com.codeborne:xls-test:1.7.2",
+            "org.apache.poi:poi:5.2.4",
+            "com.opencsv:opencsv:5.12.0",
+            "org.junit.jupiter:junit-jupiter",
+            "tools.jackson.core:jackson-core:3.0.0",
+            "tools.jackson.core:jackson-databind:3.0.0",
+            "com.fasterxml.jackson.core:jackson-annotations:2.20",
+            "org.assertj:assertj-core:3.26.0",
+            "org.apache.poi:poi-ooxml:5.4.0",
     )
 }
 
