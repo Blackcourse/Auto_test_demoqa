@@ -1,6 +1,5 @@
 package pojo;
 
-
 import com.codeborne.selenide.conditions.sessionstorage.Item;
 
 import java.util.List;
