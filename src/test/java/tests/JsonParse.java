@@ -9,22 +9,20 @@ import java.io.File;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JsonParse {
-      @Test
+
+    @Test
     void testParseCatsJson() throws Exception {
-      ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
+
         Cats cats = mapper.readValue(new File("src/test/resources/cat.json"), Cats.class);
+
 
         assertEquals("cats", cats.getTypeOfCats());
         assertEquals("Kirill", cats.getOwnerName());
         assertEquals(2, cats.getQuantityOfCats());
 
         Item firstCat = cats.getListOfCats().get(0);
-        assertEquals( "Gella", firstCat.getName());
+        assertEquals("Gella", firstCat.getName());
         assertEquals("black", firstCat.getColor());
-
     }
-
-
-
-
 }

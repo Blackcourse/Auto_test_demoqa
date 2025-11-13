@@ -6,7 +6,6 @@ import com.opencsv.CSVReader;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
@@ -18,7 +17,7 @@ public class FileParsingTest {
 
 
     private boolean isFilePresent(String fileName) throws IOException {
-        try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("TestZip.zip"))) {
+        try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("Test.zip"))) {
             ZipEntry entry;
             while ((entry = zip.getNextEntry()) != null) {
                 if (fileName.equals(entry.getName())) {
@@ -35,10 +34,10 @@ public class FileParsingTest {
 
         Assertions.assertTrue(isFilePresent("testTable.xlsx"), "Файл testTable.xlsx отсутствует в архиве");
 
-        try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("TestZip.zip"))) {
+        try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("Test.zip"))) {
             ZipEntry entry;
             while ((entry = zip.getNextEntry()) != null) {
-                if ("testTable.xlsx".equals(entry.getName())) {
+                if ("import.xlsx".equals(entry.getName())) {
                     XLS xls = new XLS(zip);
                     String actualValue = xls.excel.getSheetAt(0).getRow(1).getCell(1).getStringCellValue();
                     Assertions.assertTrue(actualValue.contains("Автомагазин"));
@@ -51,12 +50,12 @@ public class FileParsingTest {
     @DisplayName("Проверка PDF файла на количество страниц")
     void checkPdfFileNumberOfPages() throws Exception {
 
-        Assertions.assertTrue(isFilePresent("Гайд_Трейл_11-12.10.pdf"), "Файл Гайд_Трейл_11-12.10.pdf отсутствует в архиве");
+        Assertions.assertTrue(isFilePresent("Trail.pdf"), "Trail.pdf отсутствует в архиве");
 
-        try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("TestZip.zip"))) {
+        try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("Test.zip"))) {
             ZipEntry entry;
             while ((entry = zip.getNextEntry()) != null) {
-                if ("Гайд_Трейл_11-12.10.pdf".equals(entry.getName())) {
+                if ("Trail.pdf".equals(entry.getName())) {
                     PDF pdf = new PDF(zip);
                     Assertions.assertEquals(29, pdf.numberOfPages);
                 }
@@ -70,7 +69,7 @@ public class FileParsingTest {
 
         Assertions.assertTrue(isFilePresent("testTableCSV.csv"), "Файл testTableCSV.csv отсутствует в архиве");
 
-        try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("filesForTest.zip"))) {
+        try (ZipInputStream zip = new ZipInputStream(cl.getResourceAsStream("Test.zip"))) {
             ZipEntry entry;
             while ((entry = zip.getNextEntry()) != null) {
                 if ("testTableCSV.csv".equals(entry.getName())) {
