@@ -1,6 +1,5 @@
 package pojo;
 
-import com.codeborne.selenide.conditions.sessionstorage.Item;
 
 import java.util.List;
 
@@ -8,14 +7,17 @@ public class Cats {
         private String typeOfCats;
         private String nameOfOwner;
         private int quantityOfCats;
-        private final List<Item> cats;
+        private  List<Item> cats;
 
-        public Cats (String nameOfOwner, String typeOfCats, int quantityOfCats , List<Item> cats) {
-            this.quantityOfCats = quantityOfCats;
-            this.typeOfCats = typeOfCats;
-            this.nameOfOwner = nameOfOwner;
-            this.cats = cats;
-        }
+   // public Cats() {
+    //}
+
+    // public Cats (String nameOfOwner, String typeOfCats, int quantityOfCats , List<Item> cats) {
+      //      this.quantityOfCats = quantityOfCats;
+        //    this.typeOfCats = typeOfCats;
+          //  this.nameOfOwner = nameOfOwner;
+            //this.cats = cats;
+       // }
 
         public String getTypeOfCats() {
             return typeOfCats;

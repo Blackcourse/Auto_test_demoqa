@@ -6,12 +6,12 @@ public class Item {
     private static String name;
     private static String color;
 
-    public Item() {}
-    public Item(String name, String color) {
-        this.name = name;
-        this.color = color;
+    //public Item() {}
+    //public Item(String name, String color) {
+      //  this.name = name;
+        //this.color = color;
 
-    }
+    //}
 
     public static String getName() {
         return name;

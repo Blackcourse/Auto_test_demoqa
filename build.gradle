@@ -26,15 +26,19 @@ dependencies {
     )
 }
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
-}
-tasks.register('SMOKE', Test) {
+    systemProperties(System.getProperties())
     testLogging {
-        events "passed", "skipped", "failed", "standardOut", "standardError"
-        exceptionFormat "full"
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
     }
-    useJUnitPlatform {
-        includeTags("SMOKE")
+}
+
+task single_property_test(type: Test) {
+    useJUnitPlatform() {
+        includeTags("singlePropertyTest")
     }
 }

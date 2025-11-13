@@ -9,7 +9,7 @@ import java.io.File;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JsonParse {
-    @Test
+      @Test
     void testParseCatsJson() throws Exception {
       ObjectMapper mapper = new ObjectMapper();
         Cats cats = mapper.readValue(new File("src/test/resources/cat.json"), Cats.class);
