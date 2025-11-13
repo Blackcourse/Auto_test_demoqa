@@ -2,14 +2,14 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class Testboxtest {
+
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
@@ -33,7 +33,10 @@ public class Testboxtest {
         $("#output #currentAddress").shouldHave(text("Strange street 2"));
         $("#output #permanentAddress").shouldHave(text("Another street 1"));
 
+
+    }
+
     }
 
 
-}
+
