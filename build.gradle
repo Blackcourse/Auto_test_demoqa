@@ -1,5 +1,20 @@
 plugins {
     id 'java-library'
+    id 'io.qameta.allure' version '2.10.0'
+}
+
+allure {
+    report {
+        version.set("2.24.0") //версия Allure Report (https://github.com/allure-framework/allure2)
+    }
+    adapter {
+        aspectjWeaver.set(true) // обработка аннотации @Step
+        frameworks {
+            junit5 {
+                adapterVersion.set("2.24.0") //версия Allure JUnit5 (https://github.com/allure-framework/allure-java)
+            }
+        }
+    }
 }
 
 repositories {
@@ -23,6 +38,7 @@ dependencies {
             "com.fasterxml.jackson.core:jackson-annotations:2.20",
             "org.assertj:assertj-core:3.26.0",
             "org.apache.poi:poi-ooxml:5.4.0",
+            "io.qameta.allure:allure-selenide:2.24.0"
     )
 }
 
