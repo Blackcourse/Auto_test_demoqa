@@ -1,17 +1,19 @@
 plugins {
     id 'java-library'
-    id 'io.qameta.allure' version '2.10.0'
+    id 'io.qameta.allure' version '2.11.2'
 }
+def allureVersion = "2.21.0",
+    selenideVersion = "6.19.1"
 
 allure {
     report {
-        version.set("2.24.0") //версия Allure Report (https://github.com/allure-framework/allure2)
+        version.set(allureVersion) //версия Allure Report (https://github.com/allure-framework/allure2)
     }
     adapter {
         aspectjWeaver.set(true) // обработка аннотации @Step
         frameworks {
             junit5 {
-                adapterVersion.set("2.24.0") //версия Allure JUnit5 (https://github.com/allure-framework/allure-java)
+                adapterVersion.set(allureVersion) //версия Allure JUnit5 (https://github.com/allure-framework/allure-java)
             }
         }
     }
@@ -23,7 +25,7 @@ repositories {
 
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:7.10.1",
+            "com.codeborne:selenide:$selenideVersion",
             "com.github.javafaker:javafaker:1.0.2",
             "org.junit.jupiter:junit-jupiter:5.10.0",
             'org.slf4j:slf4j-simple:2.0.7',
@@ -38,7 +40,7 @@ dependencies {
             "com.fasterxml.jackson.core:jackson-annotations:2.20",
             "org.assertj:assertj-core:3.26.0",
             "org.apache.poi:poi-ooxml:5.4.0",
-            "io.qameta.allure:allure-selenide:2.24.0"
+            "io.qameta.allure:allure-selenide:$allureVersion"
     )
 }
 
@@ -56,5 +58,50 @@ tasks.withType(Test) {
 task single_property_test(type: Test) {
     useJUnitPlatform() {
         includeTags("singlePropertyTest")
+    }
+}
+tasks.register('simple', Test) {
+    useJUnitPlatform {
+        includeTags("simple")
+    }
+}
+
+tasks.register('demoqa', Test) {
+    useJUnitPlatform {
+        includeTags("demoqa")
+    }
+}
+
+tasks.register('demoqa_property', Test) {
+    useJUnitPlatform {
+        includeTags("demoqa_property")
+    }
+}
+
+tasks.register('remote', Test) {
+    useJUnitPlatform {
+        includeTags("remote")
+    }
+}
+
+tasks.register('property', Test) {
+    useJUnitPlatform {
+        includeTags("property")
+    }
+}
+
+tasks.register('hello', Test) {
+    useJUnitPlatform {
+        includeTags("hello")
+    }
+}
+
+tasks.register('SMOKE', Test) {
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        exceptionFormat "full"
+    }
+    useJUnitPlatform {
+        includeTags("SMOKE")
     }
 }

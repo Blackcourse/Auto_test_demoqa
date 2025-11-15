@@ -16,6 +16,9 @@ public class PracticeFormTests {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+
     }
 
     @Test
@@ -34,7 +37,7 @@ public class PracticeFormTests {
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
-        $("#uploadPicture").uploadFromClasspath("image_1.jpg");
+        $("#uploadPicture").uploadFromClasspath("img.png");
         $("#currentAddress").setValue("Moscow");
         $("#state").click();
         $(byText("NCR")).click();
@@ -51,7 +54,7 @@ public class PracticeFormTests {
         $(".modal-body").shouldHave(text("29 April,1999"));
         $(".modal-body").shouldHave(text("Maths"));
         $(".modal-body").shouldHave(text("Sports, Reading, Music"));
-        $(".modal-body").shouldHave(text("image_1.jpg"));
+        $(".modal-body").shouldHave(text("img.png"));
         $(".modal-body").shouldHave(text("Moscow"));
         $(".modal-body").shouldHave(text("NCR Delhi"));
 
