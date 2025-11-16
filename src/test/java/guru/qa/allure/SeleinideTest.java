@@ -1,4 +1,5 @@
 package guru.qa.allure;
+
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -8,11 +9,10 @@ import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
 import static com.codeborne.selenide.CollectionCondition.anyMatch;
-
 import static com.codeborne.selenide.Selenide.*;
 
-class SeleinideTest extends TestBase {
-
+public class SeleinideTest extends TestBase {
+    
     @Test
     @Owner("Blackcourse")
     @Severity(SeverityLevel.BLOCKER)
