@@ -1,0 +1,18 @@
+{
+  "base": {
+    "project": "Some project",
+    "environment": "qa.guru",
+    "comment": "comment here @silent_nord ",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "",
+    "enableChart": true,
+    "enableSuitesPublishing": false,
+    "customData": {}
+  },
+  "telegram": {
+    "token": "8575970911:AAHwtCTP-sgKm00KGjPJsxwPI2us6o8YSJc",
+    "chat": "...",
+    "replyTo": ""
+  }
+}
