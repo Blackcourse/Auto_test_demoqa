@@ -15,7 +15,7 @@ import java.util.Map;
 
 import static io.qameta.allure.Allure.step;
 
-@Tag("demoqa")
+
 public class RegistrationWithFakerTests extends TestBase {
 
 
