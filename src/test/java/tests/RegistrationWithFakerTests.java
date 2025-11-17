@@ -41,7 +41,7 @@ public class RegistrationWithFakerTests extends TestBase {
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
-        Attach.pageSource("1");
+        Attach.pageSource("");
         Attach.browserConsoleLogs();
         Attach.addVideo();
     }
