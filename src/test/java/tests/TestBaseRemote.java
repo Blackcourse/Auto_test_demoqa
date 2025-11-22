@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class TestBaseRemote {
     @BeforeAll
-    static void beforeAll() {
+    static void setupEnvironment() {
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = System.getProperty("browser", "chrome");
